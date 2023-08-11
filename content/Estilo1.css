@@ -1,0 +1,11 @@
+.bg-1{
+    background-color: rgb(249, 181, 147);
+    color: white;
+    text-align: center;
+    font: 24px "Arial";
+    width: 100%;
+}
+.video{
+    height: auto;
+    width: 100%;
+}
