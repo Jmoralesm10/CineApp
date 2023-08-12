@@ -194,6 +194,25 @@ function Llamada2(){
       document.querySelector('#modalArticulo').reset();
 }
 
-function Llamada3(){
-    alert ("Llamada3");
+function Llamada3(e){
+    var idpeli = document.getElementById("idPeli");
+
+    idpeli.disabled=true;
+    url = "https://movie.azurewebsites.net/api/cartelera?imdbID="+idpeli.value+"";
+    var options = {
+        method: 'DELETE'
+    };
+
+    fetch(url, options)
+        .then(response => response.json())
+        .then(data=>{
+
+            alert("Codigo http: "+data.codError +" Mensaje: "+ data.msgRespuesta);
+            llamadaDemo();
+        })
+        .catch(error => {
+            console.error('Error de red',error);
+        });
+    
+        idpeli.disabled=false;
 }
