@@ -144,11 +144,68 @@
         <option value="Chiquimula">Chiquimula</option>
         <option value="POPCINEMA">POPCINEMA</option>
       </select>
-      <button onclick="Llamada1();" btn btn-primary" type="button">UBICACION</button>
+      <button onclick="Llamada1();" class ="btn btn-primary" type="button">UBICACION</button>
     </div>
   </div>
 </div>
 <br>
+
+    <!---insertar pelicula--->
+    <div>
+      <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArticulo">Agregar Pelicula</button>
+      <div id="modalArticulo" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Pelicula</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formPeli">
+                <div class="mb-3">
+                  <label for="id" class="col-form-label">Id Pelicula:</label>
+                  <input type="text" class="form-control" id="id">
+                </div>
+                <div class="mb-3">
+                  <label for="title" class="col-form-label">Titulo:</label>
+                  <input type="text" class="form-control" id="title">
+                </div>
+                <div class="mb-3">
+                  <label for="year" class="col-form-label">Año:</label>
+                  <input type="text" class="form-control" id="year">
+                </div>
+                <div class="mb-3">
+                  <label for="type" class="col-form-label">Tipo:</label>
+                  <input type="text" class="form-control" id="type">
+                </div>
+                <div class="mb-3">
+                  <label for="poster" class="col-form-label">Poster URL:</label>
+                  <input type="text" class="form-control" id="poster">
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="col-form-label">Descripcion:</label>
+                  <input type="text" class="form-control" id="description">
+                </div>
+                <div class="mb-3">
+                  <label for="ubication" class="col-form-label">Ubicacion:</label>
+                  <input type="text" class="form-control" id="ubication">
+                </div>
+                <div class="mb-3">
+                  <label for="estado" class="col-form-label">Estado:</label>
+                  <input type="number" class="form-control" id="estado">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button onclick="Llamada2();" class="btn btn-primary" type="button">Agregar</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <br>
+      </div>
+      <br>
 
 <!------Modulo dinamico------>
   <div id="divPeli" class="row mb-2">
@@ -187,47 +244,6 @@
       </div>
     </div>
   </div>
-
-    <!---insertar pelicula--->
-<div >
-
-  <h2>Agregar Película</h2>
-    <button id="addMovieButton">Agregar Película</button>
-    <br>
-
-    <div id="movieForm" style="display: none;" class="col-sm-12 col-md-6">
-        <h3>Ingrese la información de la película:</h3>
-        <form id="movieData" class="row g-3">
-            <label for="imdbID">imdbID:</label>
-            <input type="text" id="imdbID" name="imdbID" required><br><br>
-            
-            <label for="Title">Title:</label>
-            <input type="text" id="Title" name="Title" required><br><br>
-            
-            <label for="Year">Year:</label>
-            <input type="text" id="Year" name="Year" required><br><br>
-            
-            <label for="Type">Type:</label>
-            <input type="text" id="Type" name="Type" required><br><br>
-            
-            <label for="Poster">Poster URL:</label>
-            <input type="text" id="Poster" name="Poster" required><br><br>
-
-            <label for="Description">Descripcion:</label>
-            <input type="text" id="Description" name="Description" required><br><br>
-            
-            <label for="Ubication">Ubication:</label>
-            <input type="text" id="Ubication" name="Ubication" required><br><br>
-
-            <label for="Estado">Estado:</label>
-            <input type="text" id="Estado" name="Estado" required><br><br>
-            
-            <button type="submit">Agregar Pelicula</button>
-        </form>
-    </div>
-
-</div>
-<br>
 
   <div class="row g-5">
     <div class="col-md-8">

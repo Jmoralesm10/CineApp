@@ -151,45 +151,49 @@ function Llamada1(){
 }
 
 function Llamada2(){
-    alert ("Llamada2");
+    var id = document.getElementById("id");
+    var titulo = document.getElementById("title");
+    var year = document.getElementById("year");
+    var types = document.getElementById("type");
+    var poster = document.getElementById("poster");
+    var description = document.getElementById("description");
+    var ubicacion = document.getElementById("ubication");
+    var estado = document.getElementById("estado");
+    
+    const Create = {
+        imdbID: id.value,
+        Title: titulo.value,
+        Year: year.value,
+        Type: types.value,
+        Poster:poster.value,
+        description: description.value,
+        Ubication:ubicacion.value,
+        Estado:Number(estado.value) ,
+        };
+        
+        const options = {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Create),
+        };
+
+        fetch('https://movie.azurewebsites.net/api/cartelera', options)
+        .then(data => {
+      if (!data.ok) {
+        throw Error(data.status);
+       }
+       return data.json();
+      }).then(Create => {
+      alert(Create);
+     
+      }).catch(e => {
+      console.log(e);
+      });
+      document.querySelector('#modalArticulo').reset();
 }
 
 function Llamada3(){
     alert ("Llamada3");
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const addMovieButton = document.getElementById('addMovieButton');
-    const movieForm = document.getElementById('movieForm');
-    const movieDataForm = document.getElementById('movieData');
-
-    addMovieButton.addEventListener('click', function() {
-        movieForm.style.display = 'block';
-    });
-
-    movieDataForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const formData = new FormData(movieDataForm);
-        const data = {};
-        formData.forEach((value, key) => {
-            data[key] = value;
-        }); 
-                var url = "https://movie.azurewebsites.net/api/cartelera";
-                fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.json())
-                .then(result => {
-                    console.log('Respuesta de la API:', result);
-                })
-                .catch(error => {
-                    console.error('Error al enviar los datos:', error);
-                });
-
-            });
-        });
