@@ -216,3 +216,47 @@ function Llamada3(e){
     
         idpeli.disabled=false;
 }
+
+function Llamada4 (){
+    var id = document.getElementById("Eid");
+    var titulo = document.getElementById("Etitle");
+    var year = document.getElementById("Eyear");
+    var types = document.getElementById("Etype");
+    var poster = document.getElementById("Eposter");
+    var description = document.getElementById("Edescription");
+    var ubicacion = document.getElementById("Eubication");
+    var estado = document.getElementById("Eestado");
+    
+    const Create = {
+        imdbID: id.value,
+        Title: titulo.value,
+        Year: year.value,
+        Type: types.value,
+        Poster:poster.value,
+        description: description.value,
+        Ubication:ubicacion.value,
+        Estado:Number(estado.value),
+        };
+        
+        const options = {
+        method: 'PUT',
+        headers: {
+        'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Create),
+        };
+        url = 'https://movie.azurewebsites.net/api/cartelera?imdbID='+id.value+'';
+        fetch(url, options)
+        .then(data => {
+      if (!data.ok) {
+        throw Error(data.status);
+       }
+       return data.json();
+      }).then(data => {
+        alert("Codigo http: "+data.codError +" Mensaje: "+ data.msgRespuesta);
+        llamadaDemo();
+     
+      }).catch(e => {
+      console.log(e);
+      });
+}

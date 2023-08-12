@@ -153,6 +153,7 @@
     <!---insertar pelicula--->
     <div>
       <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalArticulo">Agregar Pelicula</button>
+      <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar Pelicula</button>
       <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar Pelicula</button>
       <div id="modalArticulo" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -205,11 +206,64 @@
         </div>
       </div>
       <br>
+      <!-----Editar Pelicula-->
+      <div id="modalEditar" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Pelicula</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formPeli">
+                <div class="mb-3">
+                  <label for="Eid" class="col-form-label">Id Pelicula:</label>
+                  <input type="text" class="form-control" id="Eid">
+                </div>
+                <div class="mb-3">
+                  <label for="Etitle" class="col-form-label">Titulo:</label>
+                  <input type="text" class="form-control" id="Etitle">
+                </div>
+                <div class="mb-3">
+                  <label for="Eyear" class="col-form-label">Año:</label>
+                  <input type="text" class="form-control" id="Eyear">
+                </div>
+                <div class="mb-3">
+                  <label for="Etype" class="col-form-label">Tipo:</label>
+                  <input type="text" class="form-control" id="Etype">
+                </div>
+                <div class="mb-3">
+                  <label for="Eposter" class="col-form-label">Poster URL:</label>
+                  <input type="text" class="form-control" id="Eposter">
+                </div>
+                <div class="mb-3">
+                  <label for="Edescription" class="col-form-label">Descripcion:</label>
+                  <input type="text" class="form-control" id="Edescription">
+                </div>
+                <div class="mb-3">
+                  <label for="Eubication" class="col-form-label">Ubicacion:</label>
+                  <input type="text" class="form-control" id="Eubication">
+                </div>
+                <div class="mb-3">
+                  <label for="Eestado" class="col-form-label">Estado:</label>
+                  <input type="number" class="form-control" id="Eestado">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button onclick="Llamada4();" class="btn btn-primary" type="button">Actualizar</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-----Eliminar Pelicula----->
       <div id="modalEliminar" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header bg-primary text-white">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Pelicula</h1>
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar Pelicula</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
